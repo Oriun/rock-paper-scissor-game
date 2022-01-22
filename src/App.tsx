@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Main from './components/main';
+import Rules from './components/rules';
+import Header from './components/header';
+import React, { useEffect, useState } from 'react';
 
-function App() {
+const App = () => {
+
+  /** Score Management **/
+  const savedScore = parseInt(localStorage.score || "0")
+  const [score, setScore] = useState<number>(savedScore)
+  useEffect(()=>localStorage.setItem('score',score.toString()),[score])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header score={score}/>
+      <Main setScore={setScore} />
+      <Rules />
     </div>
   );
 }
