@@ -1,0 +1,83 @@
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 800px;
+    max-width: calc(100vw - 24px);
+    > .space {
+        min-width: calc(800px - 2 * var(--button-size));
+        width: min-content;
+        padding: 0 40px;
+        display: flex;
+        justify-content: center;
+        > div {
+            display: flex;
+            flex-direction: column;
+            width: min-content;
+            h2 {
+                width: max-content;
+                margin: 0 0 24px;
+                text-transform: uppercase;
+                color: white;
+                font-size: 40px;
+                letter-spacing: 3.5px;
+            }
+            button {
+                width: 100%;
+                height: 64px;
+                background-color: white;
+                color: hsl(229, 64%, 46%);
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 3.5px;
+                text-transform: uppercase;
+                border-radius: 8px;
+                border: none;
+                outline: none;
+                cursor: pointer;
+            }
+        }
+    }
+    > .column {
+        h2 {
+            text-transform: uppercase;
+            color: white;
+            margin: 0;
+            text-align: center;
+            letter-spacing: 3.5px;
+            margin-bottom: 40px;
+        }
+        .waiting-choice {
+            width: var(--button-size);
+            height: var(--button-size);
+            padding: calc(var(--button-size) / 7);
+            box-sizing: border-box;
+            > div {
+                border-radius: 50%;
+                background: conic-gradient(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.4));
+                height: 100%;
+                width: 100%;
+                animation: rotat 0.8s infinite forwards linear;
+                position: relative;
+                &::after {
+                    position: absolute;
+                    top: 4px;
+                    left: 4px;
+                    content: "";
+                    width: calc(100% - 8px);
+                    height: calc(100% - 8px);
+                    background-color: #1a284a;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+@keyframes rotat {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

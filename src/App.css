@@ -12,4 +12,8 @@
   align-items: center;
   flex-direction: column;
   font-family: 'Barlow Semi Condensed', sans-serif;
+  overflow: hidden;
+}
+button {
+  font-family: 'Barlow Semi Condensed', sans-serif;
 }
