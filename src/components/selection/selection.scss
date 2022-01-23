@@ -1,0 +1,36 @@
+.selection {
+    position: relative;
+    $size-factor: 3.25;
+    width: calc($size-factor * var(--button-size));
+    height: calc($size-factor * var(--button-size));
+    padding: calc(0.5 * var(--button-size));
+    box-sizing: border-box;
+    > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    > :not(img) {
+        position: absolute;
+        &[title="scissors"] {
+            top: 0;
+            left: calc(0.36 * $size-factor * var(--button-size));
+        }
+        &[title="paper"] {
+            top: calc(0.29 * $size-factor * var(--button-size));
+            right: 0;
+        }
+        &[title="rock"] {
+            bottom: 0;
+            right: calc(.14 * $size-factor * var(--button-size));
+        }
+        &[title="lizard"] {
+            bottom: 0;
+            left: calc(.14 * $size-factor * var(--button-size));
+        }
+        &[title="spock"] {
+            top: calc(0.29 * $size-factor * var(--button-size));
+            left: 0;
+        }
+    }
+}

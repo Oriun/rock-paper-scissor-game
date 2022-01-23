@@ -1,0 +1,65 @@
+$shadow: calc(0.0375 * var(--button-size, 160px));
+.choicebutton {
+    background-color: green;
+    border-radius: 50%;
+    padding: calc(var(--button-size) / 8); //20px;
+    box-sizing: border-box;
+    box-shadow: inset 0px calc(-1 * $shadow) 0px rgba(0, 0, 0, 0.3);
+    width: var(--button-size);
+    height: var(--button-size);
+    cursor: pointer;
+    .inner {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        box-shadow: inset 0px $shadow 0px rgba(0, 0, 0, 0.15);
+        img {
+            width: 50%;
+            height: 50%;
+            object-fit: contain;
+        }
+    }
+    &[title="scissors"] {
+        background: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    }
+    &[title="paper"] {
+        background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+    }
+    &[title="rock"] {
+        background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    }
+    &[title="lizard"] {
+        background: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+    }
+    &[title="spock"] {
+        background: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+    }
+}
+
+.selection .choicebutton {
+    &:hover {
+        transform: scale(1.1);
+        transition-duration: 0.2s;
+        box-shadow: inset 0px calc(-1 * $shadow) 0px rgba(0, 0, 0, 0.3), 0px 0px 18px rgba(255, 255, 255, 0.25), 0px 0px 2px #000;
+        .inner {
+            animation: drunk 2s alternate infinite ease-in-out;
+        }
+    }
+    &:active {
+        transform: scale(0.9);
+        transition-duration: 0.2s;
+    }
+}
+
+@keyframes drunk {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
