@@ -9,7 +9,7 @@ type SelectionProps = {
 };
 
 const Selection = ({ next }: SelectionProps) => {
-  const [buttonSize, setButtonSize] = useState<number>(160);
+  const [buttonSize] = useState<number>(160);
   useEffect(() => {
     changeCSS('.selection', "--button-size", buttonSize + "px");
   }, [buttonSize]);

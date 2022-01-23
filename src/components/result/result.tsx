@@ -14,8 +14,9 @@ const resultPhrase = {
   0: "It's a draw",
   1: "You win",
 };
+
 const Result = ({ choice, setScore, next }: ResultProps) => {
-  const [buttonSize, setButtonSize] = useState<number>(300);
+  const [buttonSize] = useState<number>(300);
   useEffect(() => {
     changeCSS(".result", "--button-size", buttonSize + "px");
   }, [buttonSize]);
@@ -31,6 +32,7 @@ const Result = ({ choice, setScore, next }: ResultProps) => {
       setHouseChoice(ch);
     }, 2_000);
     return () => clearTimeout(timeout);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let House = (
