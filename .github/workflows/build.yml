@@ -1,3 +1,6 @@
+# This workflow's only purpose is to integrate this project easily in my portfolio
+# I would not recommend it for a real project or team development as it push the
+# build directory in the repository wich is pointless.git status
 name: build
 on:
   push:
