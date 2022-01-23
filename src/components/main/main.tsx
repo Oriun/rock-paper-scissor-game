@@ -14,7 +14,7 @@ const Main = ({ setScore }: MainProps) => {
   const Component: React.FC<any> = useCallback(() => {
     if (choice) return <Result next={()=>setChoice(undefined)} choice={choice} setScore={setScore} />;
     else return <Selection next={setChoice} />;
-  }, [choice, setChoice]);
+  }, [choice, setChoice, setScore]);
 
   return (
     <main>
