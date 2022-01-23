@@ -1,0 +1,21 @@
+name: build
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Build FRONT
+        run: npm install && npm run build
+      - name: Commit
+        run: |
+          git add -f build
+          git commit -am "Automatic build"
+          git push
