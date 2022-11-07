@@ -36,7 +36,7 @@ jobs:
       - name: Install packages
         run: npm install
       - name: Build FRONT
-        run: PUBLIC_URL=https://oriun.github.io/rock-paper-scissor-game/ npm run build
+        run: PUBLIC_URL=/rock-paper-scissor-game npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
