@@ -18,7 +18,7 @@ const Selection = ({ next }: SelectionProps) => {
       {GameItem.map((item) => (
         <ChoiceButton choice={item} key={item} onClick={next} />
       ))}
-      <img src={process.env.PUBLIC_URL + "img/bg-pentagon.svg"} alt="" />
+      <img src="img/bg-pentagon.svg" alt="" />
     </div>
   );
 };
