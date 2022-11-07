@@ -15,7 +15,10 @@ const Choicebutton = ({ choice, onClick }: ChoiceButtonProp) => {
       onMouseUp={() => onClick?.(choice)}
     >
       <div className="inner">
-        <img alt={choice} src={`img/icon-${choice}.svg`} />
+        <img
+          alt={choice}
+          src={`${process.env.PUBLIC_URL}/img/icon-${choice}.svg`}
+        />
       </div>
     </div>
   );

@@ -8,7 +8,10 @@ type HeaderProps = {
 const Header = ({ score }: HeaderProps) => {
   return (
     <header>
-      <img src="img/logo.svg" alt="rock-paper-scissors logo" />
+      <img
+        src={process.env.PUBLIC_URL + "/img/logo.svg"}
+        alt="rock-paper-scissors logo"
+      />
       <div className="score-box">
         <h4>score</h4>
         <strong>{score}</strong>

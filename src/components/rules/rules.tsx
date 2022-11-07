@@ -23,12 +23,15 @@ const Rules = () => {
         <div>
           <h2>Rules</h2>
           <img
-            src="img/icon-close.svg"
+            src={process.env.PUBLIC_URL + "/img/icon-close.svg"}
             alt="close"
             onClick={() => setRulesOpening(false)}
           />
         </div>
-        <img src="img/image-rules-bonus.svg" alt="rules" />
+        <img
+          src={process.env.PUBLIC_URL + "/img/image-rules-bonus.svg"}
+          alt="rules"
+        />
       </div>
     </footer>
   );
