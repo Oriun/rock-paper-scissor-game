@@ -11,18 +11,14 @@ type SelectionProps = {
 const Selection = ({ next }: SelectionProps) => {
   const [buttonSize] = useState<number>(160);
   useEffect(() => {
-    changeCSS('.selection', "--button-size", buttonSize + "px");
+    changeCSS(".selection", "--button-size", buttonSize + "px");
   }, [buttonSize]);
   return (
     <div className="selection">
       {GameItem.map((item) => (
-        <ChoiceButton
-          choice={item}
-          key={item}
-          onClick={next}
-        />
+        <ChoiceButton choice={item} key={item} onClick={next} />
       ))}
-      <img src="/img/bg-pentagon.svg" alt="" />
+      <img src={process.env.PUBLIC_URL + "img/bg-pentagon.svg"} alt="" />
     </div>
   );
 };

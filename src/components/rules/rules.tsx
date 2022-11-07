@@ -19,12 +19,16 @@ const Rules = () => {
       >
         Rules
       </div>
-      <div className="rule-content" onClick={e=>e.stopPropagation()}>
+      <div className="rule-content" onClick={(e) => e.stopPropagation()}>
         <div>
           <h2>Rules</h2>
-          <img src="/img/icon-close.svg" alt="close" onClick={()=>setRulesOpening(false)} />
+          <img
+            src="img/icon-close.svg"
+            alt="close"
+            onClick={() => setRulesOpening(false)}
+          />
         </div>
-        <img src="/img/image-rules-bonus.svg" alt="rules" />
+        <img src="img/image-rules-bonus.svg" alt="rules" />
       </div>
     </footer>
   );

@@ -8,15 +8,17 @@ type ChoiceButtonProp = {
 };
 
 const Choicebutton = ({ choice, onClick }: ChoiceButtonProp) => {
-  return <div 
-  className="choicebutton" 
-  title={choice} 
-  onMouseUp={() => onClick?.(choice)}
-  >
-    <div className="inner">
-      <img alt={choice} src={`/img/icon-${choice}.svg`} />
+  return (
+    <div
+      className="choicebutton"
+      title={choice}
+      onMouseUp={() => onClick?.(choice)}
+    >
+      <div className="inner">
+        <img alt={choice} src={`img/icon-${choice}.svg`} />
+      </div>
     </div>
-    </div>;
+  );
 };
 
 export default Choicebutton;
